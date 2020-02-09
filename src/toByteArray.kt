@@ -1,7 +1,7 @@
 /**
  *  toByteArray extensions (and back)
  *  Copyright (c) 2020 Joost Welle
- *  You may redistribute/use/copy/modify/etc nuder GNU AGPL license.
+ *  You may redistribute/use/copy/modify/etc under GNU AGPL license.
  *  http://www.gnu.org/licenses/agpl-3.0.html
  *
  *  Changes primitive types to arrays of bytes with the same values
@@ -80,19 +80,4 @@ fun Char.toByteArray(): ByteArray{
  */
 fun charFromBytes(bytes: ByteArray): Char{
     return intFromBytes(ByteArray(Int.SIZE_BYTES - Char.SIZE_BYTES) + bytes).toChar()
-}
-
-
-fun main() {
-    println("testing:")
-    val pi = 3.14159
-    val lb = pi.toByteArray()
-    val c = 'c'
-    val c2 = 1007.toChar()
-    val c1b = c.toByteArray()
-    val c2b = c2.toByteArray()
-    println(doubleFromBytes(lb))
-    println(charFromBytes(c1b))
-    println(charFromBytes(c2b))
-    println(charFromBytes(c2b).toInt())
 }
