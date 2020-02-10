@@ -1,10 +1,20 @@
 /**
  *  toByteArray extensions (and back)
- *  Copyright (c) 2020 Joost Welle
- *  You may redistribute/use/copy/modify/etc under GNU AGPL license.
- *  http://www.gnu.org/licenses/agpl-3.0.html
- *
  *  Changes primitive types to arrays of bytes with the same values
+ *  version 1
+ *  Copyright (c) 2020 Joost Welle
+ *  You may redistribute/use/copy/modify/etc in whatever way you see fit.
+ *  This file is "as is".
+ *  It is not intended for any ose other than my own, and therefore I will not accept any liability in case
+ *  you decide to use it and it turns out to break all your data.
+ *  However, if it does, and you find out why, feel free to let me know so we can fix it.
+ *
+ *  usage: <Type>.toByteArray() will give a ByteArray with the same amount of bytes as the original type,
+ *  containing the same bits as the original.
+ *  the reverse, <Type>FromBytes(bytes:ByteArray) will reconstruct a basic type from bytes.
+ *
+ *  You could use it to stitch the bits of 2 Ints into one Long, or whatever
+ *  You could also use it to restructure data from a long stream of unmarked Bytes, or change structured data into such a stream.
  */
 
 const val eightOnes = 255L
